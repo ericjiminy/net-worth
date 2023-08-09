@@ -7,6 +7,7 @@ import {
     HeaderGlobalBar,
     HeaderGlobalAction,
     HeaderPanel,
+    TextInput,
 } from '@carbon/react';
 import { Settings } from '@carbon/icons-react';
 
@@ -29,8 +30,18 @@ function AppHeader() {
                     <Settings size='25' />
                 </HeaderGlobalAction>
             </HeaderGlobalBar>
-            <HeaderPanel expanded={isSettingsActive}>
-                {data.firstName}
+            <HeaderPanel
+                className='settingsPanel'
+                expanded={isSettingsActive}
+                onHeaderPanelFocus={() => {}}
+            >
+                {Object.keys(data.user).map(key => 
+                    <TextInput
+                        className='field'
+                        labelText={key}
+                        placeholder={data.user[key]}
+                    />
+                )}
             </HeaderPanel>
         </Header>
     );

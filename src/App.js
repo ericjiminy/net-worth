@@ -5,10 +5,12 @@ import AppHeader from './components/AppHeader/AppHeader';
 
 function App() {
   const [data, setData] = useState({
-    firstName: 'Eric',
-    lastName: 'Chun',
-    age: '21',
-    job: 'Software Developer'
+    user: {
+      Name: 'Eric Chun',
+      Age: '21',
+      Job: 'Software Developer'
+    },
+    netWorth: 0
   });
   return (
     <Data.Provider value={[data, setData]}>

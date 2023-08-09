@@ -1,0 +1,33 @@
+@use '@carbon/react';
+
+.titleHeader {
+    // border: solid violet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.mainTitle {
+    // border: solid purple;
+    display: flex;
+    flex-direction: row;
+    gap: .75rem;
+    height: 10rem;
+    font-size: 48px;
+    padding-top: 5rem;
+
+    .label {
+        font-weight: 100;
+    }
+
+    .netWorth {
+        font-weight: 600;
+    }
+}
+
+.details {
+    // border: solid purple;
+    font-size: 18px;
+}

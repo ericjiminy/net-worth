@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Net-Worth/static/css/main.073c9b0a.css",
+    "main.js": "/Net-Worth/static/js/main.cd6e2211.js",
+    "static/js/787.6884def6.chunk.js": "/Net-Worth/static/js/787.6884def6.chunk.js",
+    "static/media/logo.svg": "/Net-Worth/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Net-Worth/index.html",
+    "main.073c9b0a.css.map": "/Net-Worth/static/css/main.073c9b0a.css.map",
+    "main.cd6e2211.js.map": "/Net-Worth/static/js/main.cd6e2211.js.map",
+    "787.6884def6.chunk.js.map": "/Net-Worth/static/js/787.6884def6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.cd6e2211.js"
+  ]
+}

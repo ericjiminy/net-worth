@@ -1,18 +1,17 @@
 import './TitleHeader.scss';
-import { useContext, useState } from 'react';
-import { Data } from '../../Data';
 
-function TitleHeader() {
-    const [data, setData] = useContext(Data);
+function TitleHeader(props) {
+    const date = props.date;
+    const netWorth = props.netWorth;
 
     return (
         <div className='titleHeader'>
             <div className='mainTitle'>
                 <div className='label'>Net Worth: </div>
-                <div className='netWorth'>${data.netWorth}</div>
+                <div className='netWorth'>${netWorth}</div>
             </div>
             <div className='details'>
-                Total assets - Total liabilities. As of {data.date}
+                Total assets - Total liabilities. As of {date}
             </div>
         </div>
     );

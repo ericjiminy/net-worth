@@ -1,9 +1,35 @@
 import './Tables.scss';
-import { useContext, useState } from 'react';
-import { Data } from '../../Data';
+import { TextInput } from '@carbon/react';
+import { Add } from '@carbon/icons-react';
 
-function Tables() {
-    const [data, setData] = useContext(Data);
+function Tables(props) {
+    const date = props.date;
+    const totalAssets = props.totalAssets;
+    const assets = props.assets;
+    const setAssets = props.setAssets;
+    const totalLiabilities = props.totalLiabilities;
+    const liabilities = props.liabilities;
+    const setLiabilities = props.setLiabilities;
+
+    function addAsset() {
+        setAssets((prevState) => [
+            ...prevState,
+            {
+                Category: '',
+                Cells: []
+            }
+        ])
+    }
+
+    function addLiability() {
+        setLiabilities((prevState) => [
+            ...prevState,
+            {
+                Category: '',
+                Cells: []
+            }
+        ])
+    }
 
     return (
         <div className='tablesContainer'>
@@ -13,25 +39,46 @@ function Tables() {
                         Assets
                     </div>
                     <div className='headerTotal'>
-                        ${data.assets.total}
+                        ${totalAssets}
                     </div>
                 </div>
                 <div className='rows'>
-                    {data.assets.categories.map(category => 
+                    {assets.map((asset) => (
                         <div className='category'>
+                            <TextInput
+                                className='categoryLabel'
+                                placeholder='Category'
+                            />
+                            <div className='cell'>
+                                <TextInput
+                                    className='cellKey'
+                                    placeholder='Name'
+                                    helperText={date}
+                                />
+                                <TextInput
+                                    className='cellValue'
+                                    placeholder='Value'
+                                />
+
+                            </div>
+                            <div className='categorySpacer'/>
+                        </div>
+                    ))}
+                        {/* <div className='category'>
                             <div id='categoryLabel'>
-                                {category.category}
-                                {Object.keys(category.cells).map(key => 
-                                    <div className='cell'>
-                                        <div className='cellKey'>{key}:</div>
-                                        <div className='cellValue'>{category.cells[key]}</div>
-                                    </div>
-                                )}
+                                <div className='cell'>
+                                    <div className='cellKey'></div>
+                                    <div className='cellValue'></div>
+                                </div>
                                 <div className='categorySpacer'/>
                             </div>
-                        </div>
-
-                    )}
+                        </div> */}
+                </div>
+                <div 
+                    className='addAsset'
+                    onClick={addAsset}
+                >
+                    <Add size={36} />
                 </div>
             </div>
             <div className='table'>
@@ -40,25 +87,46 @@ function Tables() {
                         Liabilities
                     </div>
                     <div className='headerTotal'>
-                        ${data.liabilities.total}
+                        ${totalLiabilities}
                     </div>
                 </div>
                 <div className='rows'>
-                    {data.liabilities.categories.map(category => 
+                    {liabilities.map((liability) => (
                         <div className='category'>
+                            <TextInput
+                                className='categoryLabel'
+                                placeholder='Category'
+                            />
+                            <div className='cell'>
+                                <TextInput
+                                    className='cellKey'
+                                    placeholder='Name'
+                                    helperText={date}
+                                />
+                                <TextInput
+                                    className='cellValue'
+                                    placeholder='Value'
+                                />
+
+                            </div>
+                            <div className='categorySpacer'/>
+                        </div>
+                    ))}
+                        {/* <div className='category'>
                             <div id='categoryLabel'>
-                                {category.category}
-                                {Object.keys(category.cells).map(key => 
                                     <div className='cell'>
-                                        <div className='cellKey'>{key}:</div>
-                                        <div className='cellValue'>{category.cells[key]}</div>
+                                        <div className='cellKey'></div>
+                                        <div className='cellValue'></div>
                                     </div>
-                                )}
                                 <div className='categorySpacer'/>
                             </div>
-                        </div>
-
-                    )}
+                        </div> */}
+                </div>
+                <div 
+                    className='addLiability'
+                    onClick={addLiability}
+                >
+                    <Add size={36} />
                 </div>
             </div>
 

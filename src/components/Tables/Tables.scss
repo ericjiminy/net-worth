@@ -14,6 +14,7 @@
         flex-direction: column;
         width: 30%;
         border: 1px solid rgb(228, 228, 228);
+        background-color: white;
 
         #assets {
             background-color: #43B384;
@@ -38,35 +39,90 @@
         .category {
             background-color: white;
             padding: 1rem;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
 
-            #categoryLabel {
+            .categoryLabel .cds--text-input {
+                background-color: white;
+                width: 8rem;
+                border: none;
+                outline: none;
                 font-weight: 600;
+                padding-left: .5rem;
+            }
+
+            .cds--text-input:hover {
+                background-color: #efefef !important;
             }
 
             .cell {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                margin-left: 4rem;
+                margin-left: 6rem;
                 margin-top: 1.5rem;
                 font-weight: 300;
     
             }
-    
-            .cellKey {
+
+            .cds--text-input {
+                font-size: 15px;
             }
     
-            .cellValue {    
+            .cellKey .cds--text-input {
+                background-color: white;
+                border: none;
+                outline: none;
+                padding-left: .5rem;
+                height: 1.75rem;
+            }
+    
+            .cellValue .cds--text-input {  
+                background-color: white;
+                border: none;
+                outline: none;
+                padding-left: .5rem;  
+                text-align: right;
+                margin-right: 0;
+                height: 1.75rem;
+            }
+
+            .cds--form__helper-text {
+                padding-left: .5rem;
             }
         }
 
         .categorySpacer {
             height: 1px;
-            background-color: rgb(228, 228, 228);
+            background-color: #e4e4e4;
             margin-top: 1rem;
         }
 
+        .addAsset{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            align-self: center;
+            :hover {
+                background-color: #69cda3;
+                cursor: pointer;
+            }
+            :active {
+                background-color: #54a584;
+            }
+        }
+
+        .addLiability{
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            align-self: center;
+            :hover {
+                background-color: #f77c7c;
+                cursor: pointer;
+            }
+            :active {
+                background-color: #bd5151;
+            }
+        }
     }
+
 
 }

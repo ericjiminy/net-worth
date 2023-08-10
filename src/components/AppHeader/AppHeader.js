@@ -1,18 +1,15 @@
 import './AppHeader.scss';
-import { useContext, useState } from 'react';
-import { Data } from '../../Data';
+import { useState } from 'react';
 import {
     Header,
     HeaderName,
     HeaderGlobalBar,
     HeaderGlobalAction,
-    HeaderPanel,
-    TextInput,
+    HeaderPanel
 } from '@carbon/react';
 import { Settings } from '@carbon/icons-react';
 
 function AppHeader() {
-    const [data, setData] = useContext(Data);
     const [isSettingsActive, setIsSettingsActive] = useState(false);
     
     return (
@@ -35,13 +32,7 @@ function AppHeader() {
                 expanded={isSettingsActive}
                 onHeaderPanelFocus={() => {}}
             >
-                {Object.keys(data.user).map(key => 
-                    <TextInput
-                        className='field'
-                        labelText={key}
-                        placeholder={data.user[key]}
-                    />
-                )}
+                <></>
             </HeaderPanel>
         </Header>
     );

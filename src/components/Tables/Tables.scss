@@ -1,0 +1,72 @@
+@use '@carbon/react';
+
+.tablesContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4.5rem;
+    height: 40rem;
+    margin-top: 5rem;
+
+    .table {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        border: 1px solid rgb(228, 228, 228);
+
+        #assets {
+            background-color: #43B384;
+        }
+
+        #liabilities {
+            background-color: #E85C5C;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            height: 4.5rem;
+            font-size: 36px;
+            padding: 2rem;
+            font-weight: 200;
+        }
+
+        .category {
+            background-color: white;
+            padding: 1rem;
+            padding-top: 1.5rem;
+
+            #categoryLabel {
+                font-weight: 600;
+            }
+
+            .cell {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-left: 4rem;
+                margin-top: 1.5rem;
+                font-weight: 300;
+    
+            }
+    
+            .cellKey {
+            }
+    
+            .cellValue {    
+            }
+        }
+
+        .categorySpacer {
+            height: 1px;
+            background-color: rgb(228, 228, 228);
+            margin-top: 1rem;
+        }
+
+    }
+
+}

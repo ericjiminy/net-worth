@@ -1,0 +1,352 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  overflow: scroll;
+}
+
+.editingDiv {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+
+  .editingBox {
+    background-color: white;
+    height: 16rem;
+    width: 30rem;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .editingLabel {
+      font-size: 25px;
+      margin-bottom: 1rem;
+    }
+
+    #inputError {
+      border: solid red;
+    }
+
+    .editingInput {
+      height: 3rem;
+      width: 24rem;
+      font-size: 30px;
+      margin-bottom: 2.5rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      outline: none;
+    }
+
+    .errorText {
+      margin-top: -2.4rem;
+      margin-bottom: 1.33rem;
+      font-size: 14px;
+      color: red;
+      align-self: start;
+      margin-left: 2.35rem;
+    }
+
+    .editingButtons {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+
+      .editingCancel {
+        background-color: rgb(241, 50, 50);
+      }
+      .editingCancel:hover {
+        background-color: rgb(156, 36, 36);
+        cursor: pointer;
+      }
+      .editingSave {
+        background-color: rgb(44, 186, 44);
+      }
+      .editingSave:hover {
+        background-color: rgb(32, 137, 32);
+        cursor: pointer;
+      }
+
+      .editingCancel,
+      .editingSave {
+        font-size: 25px;
+        color: white;
+        width: 7rem;
+        height: 3rem;
+        line-height: 3rem;
+      }
+    }
+  }
+}
+
+.titleDiv {
+  height: 3.5rem;
+  background: rgb(39, 39, 39);
+  line-height: 3.5rem;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .title {
+    font-size: 30px;
+    font-weight: 450;
+    margin-left: 1rem;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .title:hover {
+    background: rgb(111, 111, 111);
+    cursor: pointer;
+  }
+
+  .toolbar {
+    display: flex;
+    flex-direction: row;
+    margin-right: 1rem;
+    font-size: 20px;
+
+    .button:hover {
+      background: rgb(111, 111, 111);
+      cursor: pointer;
+    }
+
+    .button {
+      padding: 0 1.5rem 0 1.5rem;
+    }
+  }
+}
+
+.footer {
+  height: 3rem;
+  background: rgb(39, 39, 39);
+  margin-top: auto;
+}
+
+.totalDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .total {
+    font-size: 64px;
+    font-weight: 500;
+  }
+
+  .assetBarDiv,
+  .liabilityBarDiv {
+    width: calc((100vw - 4rem - 600px) / 2);
+    display: flex;
+  }
+
+  .assetBarDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+  }
+
+  .liabilityBarDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+  }
+
+  #assetBar {
+    background: rgb(89, 226, 89);
+    margin: 0 2rem 0 2rem;
+  }
+  #liabilityBar {
+    background: rgb(238, 111, 111);
+    margin: 0 2rem 0 2rem;
+  }
+
+  #assetBar,
+  #liabilityBar {
+    width: 4rem;
+    height: 4rem;
+    transition: width 2s;
+  }
+}
+
+#hoverRow .deleteRow {
+  display: flex;
+}
+
+.assets_and_liabilities {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+
+  .assets {
+    background: rgb(161, 255, 161);
+    .assets_total {
+      background: rgb(89, 226, 89);
+    }
+    .item:hover {
+      background: rgb(89, 226, 89);
+      cursor: pointer;
+    }
+    .itemLabel:hover,
+    .itemValue:hover,
+    .deleteRow:hover {
+      background: rgb(70, 193, 70);
+    }
+  }
+
+  .liabilities {
+    background: rgb(255, 161, 161);
+    .liabilities_total {
+      background: rgb(238, 111, 111);
+    }
+    .item:hover {
+      background: rgb(238, 111, 111);
+      cursor: pointer;
+    }
+    .itemLabel:hover,
+    .itemValue:hover,
+    .deleteRow:hover {
+      background: rgb(204, 82, 82);
+    }
+  }
+
+  .assets,
+  .liabilities {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    max-height: 50rem;
+    flex-basis: 100%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    .assets_total,
+    .liabilities_total {
+      font-size: 42px;
+      font-weight: 450;
+      padding: 0.75rem;
+    }
+
+    .assets_items,
+    .liabilities_items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 30px;
+
+      .item {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        height: 2.5rem;
+        padding: 0.5rem 0 0.5rem 0;
+        justify-content: space-between;
+
+        .itemLabelDiv {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .itemLabel {
+            padding-left: 0.8rem;
+            padding-right: 1.2rem;
+            margin-right: -1.2rem;
+          }
+
+          .itemLabel:hover {
+            cursor: pointer;
+          }
+
+          .itemLabel,
+          .itemColon {
+            white-space: pre;
+            line-height: 3.5rem;
+          }
+        }
+
+        .itemValueDiv {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .itemValue {
+            padding-right: 0.8rem;
+            padding-left: 1.7rem;
+            margin-left: -1.7rem;
+          }
+
+          .itemValue:hover {
+            cursor: pointer;
+          }
+
+          .itemDollar {
+            z-index: 2;
+          }
+
+          .itemDollar,
+          .itemValue {
+            line-height: 3.5rem;
+          }
+
+          .deleteRowPlaceholder {
+            height: 3.5rem;
+            width: 3.5rem;
+          }
+
+          .deleteRow {
+            padding: 18px;
+          }
+
+          .deleteRow:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .itemLabelEdit:hover,
+      .itemValueEdit:hover {
+        background-color: lightgray;
+        cursor: pointer;
+      }
+    }
+
+    .addAsset {
+      background: rgb(89, 226, 89);
+    }
+
+    .addLiability {
+      background: rgb(238, 111, 111);
+    }
+
+    .addAsset:hover {
+      background: rgb(70, 193, 70);
+      cursor: pointer;
+    }
+
+    .addLiability:hover {
+      background: rgb(204, 82, 82);
+      cursor: pointer;
+    }
+
+    .addAsset,
+    .addLiability {
+      font-size: 20px;
+      font-weight: 600;
+      width: 100%;
+      height: 3rem;
+      line-height: 3rem;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/net-worth/static/css/main.e9117498.css",
+    "main.js": "/net-worth/static/js/main.2dec1e23.js",
+    "static/js/453.4c9957fd.chunk.js": "/net-worth/static/js/453.4c9957fd.chunk.js",
+    "static/media/delete.png": "/net-worth/static/media/delete.4e27f5021c5cea923237.png",
+    "index.html": "/net-worth/index.html",
+    "main.e9117498.css.map": "/net-worth/static/css/main.e9117498.css.map",
+    "main.2dec1e23.js.map": "/net-worth/static/js/main.2dec1e23.js.map",
+    "453.4c9957fd.chunk.js.map": "/net-worth/static/js/453.4c9957fd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e9117498.css",
+    "static/js/main.2dec1e23.js"
+  ]
+}

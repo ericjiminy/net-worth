@@ -51,7 +51,7 @@ function App() {
 
     setNetOld(netNew);
     setNetNew(assetsTotal - liabilitiesTotal);
-  }, [assetsTotal, liabilitiesTotal]);
+  }, [assetsTotal, liabilitiesTotal, netNew]);
 
   useEffect(() => {
     let newErrorText = "";
@@ -268,6 +268,7 @@ function App() {
                       width={20}
                       height={20}
                       onClick={() => handleDeleteRowClick(i, 0)}
+                      alt="delete"
                     />
                   ) : (
                     <div className="deleteRowPlaceholder" />
@@ -325,6 +326,7 @@ function App() {
                       width={20}
                       height={20}
                       onClick={() => handleDeleteRowClick(i, 1)}
+                      alt='delete'
                     />
                   ) : (
                     <div className="deleteRowPlaceholder" />
